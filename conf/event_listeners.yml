@@ -1,0 +1,4 @@
+ProcessPusherAuthentication:
+  class: Pantono\Pusher\Events\ProcessPusherAuthentication
+  parameters:
+    - "@Pusher"

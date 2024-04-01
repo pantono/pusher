@@ -1,0 +1,6 @@
+Pusher:
+  class: Pantono\Pusher\Pusher
+  parameters:
+    - "@PusherService"
+PusherService:
+  class: Pantono\Pusher\Factory\PusherServiceFactory
