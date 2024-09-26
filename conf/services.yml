@@ -1,5 +1,11 @@
 Pusher:
   class: Pantono\Pusher\Pusher
+  parameters:
+    - "@PusherService"
+    - "@EventDispatcher"
+    - "@EventDispatcher"
 PusherService:
   class: Pantono\Pusher\Factory\PusherServiceFactory
+  parameters:
+    - $pusher
   alias: Pusher\Pusher
