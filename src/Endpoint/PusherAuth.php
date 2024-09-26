@@ -24,7 +24,7 @@ class PusherAuth extends AbstractEndpoint
         /**
          * @var ?User $user
          */
-        $user = $this->getSession()->get('user');
+        $user = $this->getSecurityContext()->get('user');
         if (!$user) {
             throw new AccessDeniedException('You must be logged in');
         }
