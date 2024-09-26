@@ -1,0 +1,17 @@
+pusher_auth:
+  route: /pusher/auth
+  controller: Pantono\Pusher\Endpoint\PusherAuth
+  method: POST
+  title: Login
+  description: Login
+  security_contexts:
+    - ValidUserToken
+  fields:
+    socket_id:
+      required: true
+      label: Socket ID
+      type: string
+    channel_name:
+      required: true
+      label: Channel Names
+      type: array
