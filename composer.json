@@ -10,7 +10,8 @@
     "pantono/authentication": "^1.0",
     "robmorgan/phinx": "^0.16.0",
     "symfony/event-dispatcher": "^7.0",
-    "pantono/database": "^1.0"
+    "pantono/database": "^1.0",
+    "pantono/core": "^1.0"
   },
   "require-dev": {
     "phpunit/phpunit": "10.3.4",
