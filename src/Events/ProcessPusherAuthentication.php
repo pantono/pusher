@@ -25,7 +25,11 @@ class ProcessPusherAuthentication implements EventSubscriberInterface
     public function processPusherAuth(PusherAuthEvent $event): void
     {
         $type = $this->pusher->getPermissionForType($event->getResourceType());
-        if ($event->getUser()->hasPermission($type)) {
+        if ($type) {
+            if ($event->getUser()->hasPermission($type)) {
+                $event->setAuthorised(true);
+            }
+        } else {
             $event->setAuthorised(true);
         }
     }
