@@ -2,6 +2,8 @@ Pusher:
   class: Pantono\Pusher\Pusher
   parameters:
     - "@PusherService"
+    - "@EventDispatcher"
+    - :Pantono\Pusher\Repository\PusherRepository
 PusherService:
   class: Pantono\Pusher\Factory\PusherServiceFactory
   parameters:
