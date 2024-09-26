@@ -18,6 +18,6 @@ class PusherServiceFactory implements FactoryInterface
     {
         $config = $this->config;
 
-        return new Pusher($config['key'], $config['secret'], $config['app_id'], ['cluster' => $config['cluster']], $config['host']);
+        return new Pusher($config['key'], $config['secret'], $config['app_id'], ['cluster' => $config['cluster'], 'host' => $config['host']]);
     }
 }
