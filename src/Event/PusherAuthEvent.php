@@ -13,9 +13,9 @@ class PusherAuthEvent extends Event
     private string $resourceName;
     private array $authInfo;
     private bool $authorised = false;
-    private string|int $resourceId;
+    private string|int|null $resourceId;
 
-    public function __construct(User $user, string $socketId, string $resourceType, string $resourceName, string|int $resourceId, array $authInfo = [])
+    public function __construct(User $user, string $socketId, string $resourceType, string $resourceName, string|int|null $resourceId, array $authInfo = [])
     {
         $this->user = $user;
         $this->socketId = $socketId;
@@ -53,7 +53,7 @@ class PusherAuthEvent extends Event
         return $this->authInfo;
     }
 
-    public function getResourceId(): int|string
+    public function getResourceId(): int|string|null
     {
         return $this->resourceId;
     }
