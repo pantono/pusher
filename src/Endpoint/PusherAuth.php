@@ -19,7 +19,10 @@ class PusherAuth extends AbstractEndpoint
         $this->pusher = $pusher;
     }
 
-    public function processRequest(ParameterBag $parameters): array|ResourceAbstract|Response
+    /**
+     * @return array<string,mixed>
+     */
+    public function processRequest(ParameterBag $parameters): array
     {
         /**
          * @var ?User $user
@@ -31,7 +34,7 @@ class PusherAuth extends AbstractEndpoint
         $results = [];
         foreach ($parameters->get('channel_name') as $channel) {
             $auth = $this->pusher->processUserAuth($user, $parameters->get('socket_id'), $channel);
-            if ($auth === false) {
+            if ($auth === null) {
                 $results[$channel] = ['status' => 403];
             } else {
                 $results[$channel] = [

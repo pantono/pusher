@@ -39,6 +39,9 @@ class Pusher
         return $this->pusher->trigger($channel, $event, $data);
     }
 
+    /**
+     * @return array<mixed>|null
+     */
     public function processUserAuth(User $user, string $socketId, string $channelName, array $authInfo = []): ?array
     {
         [$type, $name, $id] = explode('-', $channelName, 3);

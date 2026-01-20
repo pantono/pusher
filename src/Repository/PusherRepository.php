@@ -2,9 +2,9 @@
 
 namespace Pantono\Pusher\Repository;
 
-use Pantono\Database\Repository\MysqlRepository;
+use Pantono\Database\Repository\DefaultRepository;
 
-class PusherRepository extends MysqlRepository
+class PusherRepository extends DefaultRepository
 {
     public function getPermissionForType(string $type): ?string
     {
