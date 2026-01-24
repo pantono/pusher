@@ -8,7 +8,7 @@
     "pantono/utilities": "^1.0",
     "pusher/pusher-php-server": "^7.2",
     "pantono/authentication": "^1.0",
-    "robmorgan/phinx": "^0.16.0",
+    "pantono/phinx": "^0.16",
     "symfony/event-dispatcher": "^7.0",
     "pantono/database": "^1.0",
     "pantono/core": "^1.0"
