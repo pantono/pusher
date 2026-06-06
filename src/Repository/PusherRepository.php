@@ -8,8 +8,8 @@ class PusherRepository extends DefaultRepository
 {
     public function getPermissionForType(string $type): ?string
     {
-        $select = $this->getDb()->select()->from('pusher_auth_type', ['permission'])
-            ->where('type=?', $type);
+        $select = $this->getDb()->select('p.permission')->from('pusher_auth_type', 'p')
+            ->whereParam('type=?', $type);
 
         $row = $this->getDb()->fetchRow($select);
         if (empty($row)) {
