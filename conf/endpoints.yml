@@ -4,8 +4,8 @@ pusher_auth:
   method: POST
   title: Login
   description: Login
-  security_contexts:
-    - ValidUserToken
+  security_gates:
+    - UserLoggedIn
   fields:
     socket_id:
       required: true
