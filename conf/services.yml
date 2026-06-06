@@ -8,4 +8,5 @@ PusherService:
   class: Pantono\Pusher\Factory\PusherServiceFactory
   parameters:
     - $pusher
-  alias: Pusher\Pusher
+  aliases:
+    - Pusher\Pusher
